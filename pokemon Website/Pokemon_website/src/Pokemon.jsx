@@ -19,7 +19,6 @@ const Pokemon = () => {
                 
             })
             const detailedResponse = await Promise.all(detailedData);
-            console.log("detailedResponse", detailedResponse);
             setPokemonData(detailedResponse);
             setLoading(false)
         }
@@ -66,6 +65,7 @@ const Pokemon = () => {
                     id="findPokemon"
                     type="text"
                     name="pokemon"
+                    placeholder="Search Pokemon"
                     value={inputVal}
                     onChange={(e) => setInputVal(e.target.value)}
                     />
@@ -79,10 +79,9 @@ const Pokemon = () => {
                                    searchInputData.map((curElem) => {
                                      return (
                                         <PokemonCard key={curElem.id} curElem={curElem} />
-                                        
                                      )
                                    }
-                                   ) 
+                                 ) 
                                 }
                                
                             
